@@ -43,10 +43,12 @@
     function fizzBuzz(n=0){
         var r = []
         var t = [];
-        for(i=1;i<=n;i++){ i%15===0 ? r.push("FizzBuzz") 
-            : i%3===0 ? r.push("Fizz") 
-            : i%5===0 ? r.push("Buzz") 
-            : r.push(String(i))}
+        for(i=1;i<=n;i++){ 
+            i%15===0 ? r.push("FizzBuzz") 
+                : i%3===0 ? r.push("Fizz") 
+                : i%5===0 ? r.push("Buzz") 
+                : r.push(String(i))
+            }
         r.forEach(x=>t.push(`<li>${x}</li>`))
         console.log(r)
         document.querySelector('ul').innerHTML = t.join("")
