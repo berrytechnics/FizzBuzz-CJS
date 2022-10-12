@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FizzBuzz</title>
-    <style>
-        body{
-            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            color:white;
-            background-color:grey
-        }
-        button{
-            float:right;
-            border:0px;
-            border-radius:.5rem;
-            background-color: rgb(7, 255, 255);
-            font-weight: bold;
-            padding:1rem;
-        }
-        ul{
-            list-style:none;
-        }
-        input{
-            width:100%;
-            height:3rem;
-            border:0px;
-            border-radius:.5rem;
-            margin-bottom:.5rem;
-        }
-    </style>
-</head>
-<body>
-    <h1>FizzBuzz</h1>
-    <div>
-        <input type="number" step="1" value=0 required>
-        <button onclick="run()">Generate List</button>
-        <ul></ul>
-    </div>
-</body>
-<script>
-    function fizzBuzz(n=0){
-        var r = []
-        var t = [];
-        for(i=1;i<=n;i++){ 
-            i%15===0 ? r.push("FizzBuzz") 
-                : i%3===0 ? r.push("Fizz") 
-                : i%5===0 ? r.push("Buzz") 
-                : r.push(String(i))
-            }
-        r.forEach(x=>t.push(`<li>${x}</li>`))
-        console.log(r)
-        document.querySelector('ul').innerHTML = t.join("")
-    }
-    function run(){
-        fizzBuzz(document.querySelector('input').value)
-    }
-</script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FizzBuzz</title>
+		<style>
+			body {
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+					Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+				color: white;
+				background-color: grey;
+			}
+			button {
+				float: right;
+				border: 0px;
+				border-radius: 0.5rem;
+				background-color: rgb(7, 255, 255);
+				font-weight: bold;
+				padding: 1rem;
+			}
+			ul {
+				list-style: none;
+			}
+			input {
+				width: 100%;
+				height: 3rem;
+				border: 0px;
+				border-radius: 0.5rem;
+				margin-bottom: 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>FizzBuzz</h1>
+		<div>
+			<input type="number" step="1" value="0" required />
+			<button onclick="run()">Generate List</button>
+			<ul></ul>
+		</div>
+	</body>
+	<script>
+		function fizzBuzz(n = 0) {
+			var r = []
+			var t = []
+			for (i = 1; i <= n; i++) {
+				i % 15 === 0
+					? r.push("FizzBuzz")
+					: i % 3 === 0
+					? r.push("Fizz")
+					: i % 5 === 0
+					? r.push("Buzz")
+					: r.push(String(i))
+			}
+			r.forEach(x => t.push(`<li>${x}</li>`))
+			console.log(r)
+			document.querySelector("ul").innerHTML = t.join("")
+		}
+		function run() {
+			fizzBuzz(document.querySelector("input").value)
+		}
+	</script>
 </html>
