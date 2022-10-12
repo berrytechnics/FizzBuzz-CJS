@@ -30,6 +30,10 @@
 				border-radius: 0.5rem;
 				margin-bottom: 0.5rem;
 			}
+			.time{
+				font-weight: bold;
+				text-shadow: .1rem .1rem black;
+			}
 			.fizz{
 				color:yellow;
 			}
@@ -49,6 +53,7 @@
 		<div>
 			<input type="number" step="1" value="0" required />
 			<button onclick="run()">Generate List</button>
+			<div class="time"></div>
 			<div class="con"></div>
 		</div>
 	</body>
@@ -65,8 +70,10 @@
 				? r.push("Buzz")
 				: r.push(String(i))
 			}
+			time = `Processed in ${(Date.now()-time)} milliseconds`
 			console.log(r)
-			console.log(`Processed in ${(Date.now()-time)/1000} seconds`)
+			console.log(time)
+			document.querySelector(".time").innerHTML = time
 			var t = []
 			r.forEach(x => t.push(`<span class='${isNaN(x) ? x.toLowerCase():'text-red'}'>${x}</span>`))
 			document.querySelector(".con").innerHTML = t.join(" , ")
