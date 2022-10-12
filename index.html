@@ -49,9 +49,7 @@
             else if(i%5===0) arr.push('Buzz')
             else arr.push(String(i))
         }
-        arr.forEach(x=>{
-            template.push(`<li>${x}</li>`)
-        })
+        arr.forEach(x=>template.push(`<li>${x}</li>`))
         console.log(arr)
         document.querySelector('ul').innerHTML = template.join("")
     }
