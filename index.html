@@ -35,13 +35,12 @@
     <h1>FizzBuzz</h1>
     <div>
         <input type="number" step="1" value=0 required>
-        <button onclick="fizzBuzz()">Generate List</button>
+        <button onclick="run()">Generate List</button>
         <ul></ul>
     </div>
 </body>
 <script>
-    function fizzBuzz(){
-        var n = document.querySelector('input').value
+    function fizzBuzz(n=0){
         var arr = []
         var template = [];
         for(i=1;i<=n;i++){
@@ -55,6 +54,9 @@
         })
         console.log(arr)
         document.querySelector('ul').innerHTML = template.join("")
+    }
+    function run(){
+        fizzBuzz(document.querySelector('input').value)
     }
 </script>
 </html>
